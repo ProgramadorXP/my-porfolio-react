@@ -1,4 +1,4 @@
-import TitleSection from "./components/titleSection";
+import TitleSection from "./components/TitleSection";
 
 const html = '/icons/html.png';
 const css = '/icons/css.png';
