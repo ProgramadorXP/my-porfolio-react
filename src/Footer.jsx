@@ -11,7 +11,7 @@ const Footer = () => {
             </div>
             <div className="mt-2">
                 <p className="text-zinc-900 dark:text-white text-center">
-                    &copy; Todos los derechos reservados para Jonhatan Villalobos.
+                    &copy; 2023 Jonhatan Villalobos.
                 </p>
             </div>
         </footer>
