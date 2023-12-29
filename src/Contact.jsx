@@ -1,5 +1,5 @@
 import Input from "./components/Input";
-import TitleSection from "./components/titleSection";
+import TitleSection from "./components/TitleSection";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
