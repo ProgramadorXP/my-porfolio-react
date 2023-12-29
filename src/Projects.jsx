@@ -1,5 +1,5 @@
 import Article from "./components/Article";
-import TitleSection from "./components/titleSection";
+import TitleSection from "./components/TitleSection";
 
 const Projects = () => {
     const myPortfolio = '/images/project-1.png';

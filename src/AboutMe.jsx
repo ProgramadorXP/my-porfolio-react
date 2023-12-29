@@ -1,4 +1,4 @@
-import TitleSection from "./components/titleSection";
+import TitleSection from "./components/TitleSection";
 
 const AboutMe = () => {
   return (
