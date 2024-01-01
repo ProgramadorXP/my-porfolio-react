@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 import TextArea from "./components/TextArea";
-import emailjs from "/node_modules/@emailjs/browser/es/index.js";
+import emailjs from "@emailjs/browser/es/index.js";
 
 const Contact = () => {
   const [name, setName]= useState({field: '', correct: null});
