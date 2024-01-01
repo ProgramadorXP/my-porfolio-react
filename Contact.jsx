@@ -21,8 +21,7 @@ const Contact = () => {
     e.preventDefault();
     if(name.correct === 'true' && email.correct === 'true' && message.correct === 'true'){
       emailjs.sendForm('service_nv6qdlh', 'template_41gt3ho', e.target, '0HUzt91PWZgmN9qjI')
-      .then(response => setFormCorrect(true))
-      .catch(error => setFormCorrect(false))
+      setFormCorrect(true);
       setName({field: '', correct: null});
       setEmail({field: '', correct: null});
       setMessage({field: '', correct: null});
