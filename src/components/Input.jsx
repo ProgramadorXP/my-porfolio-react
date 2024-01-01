@@ -20,12 +20,14 @@ const validation = () => {
       <label
                   className="mr-2 text-zinc-900 dark:text-white tracking-wide cursor-pointer"
                   htmlFor={name}
+                  correct={state.correct}
                 >
                   {label}
                 </label>
       <input
         type={type}
         id={name}
+        name={name}
         value={state.field}
         onChange={onChange}
         onKeyUp={validation}

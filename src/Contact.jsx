@@ -4,28 +4,27 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 import TextArea from "./components/TextArea";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-  const [name, setName]= useState({field: "", correct: null});
+  const [name, setName]= useState({field: '', correct: null});
   const [email, setEmail]= useState({field: '', correct: null});
-  const [subject, setSubject]= useState({field: '', correct: null});
   const [message, setMessage]= useState({field: '', correct: null});
   const [formCorrect, setFormCorrect] = useState(null);
 
   const expressions = {
     name: /^[a-zA-ZÀ-ÿ\s]{4,40}$/, // Letras y espacios, pueden llevar acentos.
     email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-    subject: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos.
-    message: /^[a-zA-ZÀ-ÿ\s]{5,40}$/ // Letras y espacios, pueden llevar acentos.
+    message: /^.{5,200}$/ // Letras y espacios, pueden llevar acentos.
   }
   const onSubmit = (e) => {
     e.preventDefault();
-
-    if(name.correct === 'true' && email.correct === 'true' && subject.correct === 'true' && message.correct === 'true'){
-      setFormCorrect(true);
+    if(name.correct === 'true' && email.correct === 'true' && message.correct === 'true'){
+      emailjs.sendForm('service_nv6qdlh', 'template_41gt3ho', e.target, '0HUzt91PWZgmN9qjI')
+      .then(response => setFormCorrect(true))
+      .catch(error => setFormCorrect(false))
       setName({field: '', correct: null});
       setEmail({field: '', correct: null});
-      setSubject({field: '', correct: null});
       setMessage({field: '', correct: null});
     } else {
       setFormCorrect(false);
@@ -53,16 +52,6 @@ const Contact = () => {
                 name="email"
                 regularExpression={expressions.email} 
               />
-              {/*<Input name="email" id="email" type="email" />*/}
-              <Input
-                state={subject}
-                setState={setSubject}
-                label="Subject"
-                type="text"
-                name="subject"
-                regularExpression={expressions.subject} 
-              />
-              {/*<Input name="subject" id="subject" type="text" />*/}
           </div>
           <div className="flex flex-col gap-6">
             <TextArea 
