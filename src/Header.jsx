@@ -29,7 +29,7 @@ const Header = () => {
     }
 
     return(
-        <header className='flex justify-between font-bold items-center p-5 sticky top-0 bg-zinc-50 dark:bg-zinc-900'>
+        <header className='contenedorHeader flex justify-between font-bold items-center p-5 sticky top-0 bg-zinc-50 dark:bg-zinc-900'>
             <div>
                 <a href="/index" className='text-4xl'>
                     <FontAwesomeIcon icon={faCode} className='text-amber-600'/>
